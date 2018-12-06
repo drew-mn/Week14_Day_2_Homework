@@ -1,5 +1,7 @@
 import React from 'react';
 import SongList from '../components/SongList';
+import './SongContainer.css';
+import Header from '../components/Header';
 
 class SongContainer extends React.Component {
   constructor(props){
@@ -7,6 +9,7 @@ class SongContainer extends React.Component {
     this.state = {
       songs: []
     }
+    this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
   componentDidMount(){
@@ -15,11 +18,18 @@ class SongContainer extends React.Component {
     .then(data => this.setState({songs: data.feed.entry}));
   }
 
+  handleSelectChange(event) {
+  this.songs.loadSongs(event.target.value);
+}
+
   render(){
     return (
       <div>
-        <h2>Top 20 Songs</h2>
+        <Header
+          handleSelectChange={this.handleSelectChange}
+          genres={this.props.genres}/>
         <SongList songs={this.state.songs}/>
+
       </div>
     )
   }

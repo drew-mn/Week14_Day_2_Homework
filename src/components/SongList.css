@@ -1,0 +1,36 @@
+.song-list{
+
+  margin-right: 10%;
+  margin-bottom: 3%;
+  padding: 10px;
+  color: black;
+  border-radius: 5px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 0.8em;
+}
+
+ol {
+  flex-flow: row;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 30px;
+  align-self: flex-start;
+
+}
+
+
+
+h2 {
+  align-content: center;
+}
+
+img{
+  height: 45%;
+  width: 45%;
+  text-align: justify;
+  display: block;
+  margin-left: -45;
+  margin-bottom: 5%;
+
+}
